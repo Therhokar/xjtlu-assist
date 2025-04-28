@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
     <div id="app"></div>
+    <div id="navbar">
+      <div></div>
+    </div>
+    <style>
+      #navbar {
+        background-color: white;
+        bottom: 0;
+        height: 24px;
+        position: fixed;
+        width: 100%;
+
+        div {
+          background-color: black;
+          border-radius: 3px;
+          height: 6px;
+          margin: 9px auto;
+          width: 9em;
+        }
+      }
+
+      .v-btn--variant-text .v-btn__overlay {
+        background: none;
+      }
+    </style>
     <script type="module" src="/src/main.ts"></script>
+    <script>
+      window.toggleNavbarTheme = function (val) {
+        const navbar = document.getElementById('navbar');
+        if (val) {
+          navbar.style.backgroundColor = 'rgb(222 222 222)';
+          navbar.style.filter = val;
+        } else {
+          navbar.style.backgroundColor = null;
+          navbar.style.filter = null;
+        }
+      };
+    </script>
   </body>
 </html>
